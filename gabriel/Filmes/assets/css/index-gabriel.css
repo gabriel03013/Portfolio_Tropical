@@ -1,0 +1,426 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --cinza-bem-escuro: #212121;
+  --cinza-escuro: #2c2c2c;
+  --cinza-mediano: #6d6d6d;
+  --azul-claro: #88d6ce;
+  --branco: #e6e6e6;
+  --branco-80: #e6e6e680;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--cinza-bem-escuro);
+}
+
+/* ================= HEADER ================= */
+header {
+  position: absolute;
+  width: 80%;
+  height: 3.5rem;
+  left: 30rem;
+  top: 5%;
+  display: flex;
+  gap: 3rem;
+
+  > a {
+    background-color: var(--azul-claro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cinza-escuro);
+    font-size: 1.6rem;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 1rem;
+    padding: .5rem .5rem;
+  }
+
+  #filtroDiv {
+    select {
+      appearance: none;
+      background-color: var(--cinza-escuro);
+      background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 1.3rem center;
+      background-size: 15%;
+      color: var(--branco);
+      border: none;
+      height: 100%;
+      width: 15rem;
+      display: flex;
+      justify-content: space-evenly;
+      padding-left: 2rem;
+      border-radius: 1.5rem;
+      font-size: 1.6rem;
+      outline: none;
+    }
+  }
+
+  #search-bar {
+    position: relative;
+
+    i {
+      position: absolute;
+      font-size: 2.3rem;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 2rem;
+      color: var(--branco);
+    }
+
+    input {
+      background-color: var(--cinza-escuro);
+      border: none;
+      height: 100%;
+      width: 50rem;
+      border-radius: 1.5rem;
+      outline: none;
+      padding-left: 2rem;
+      font-size: 1.6rem;
+      color: var(--branco);
+    }
+  }
+}
+
+/* ================= SIDEBAR ================= */
+#sidebar {
+  position: fixed;
+  background-color: var(--cinza-escuro);
+  width: 20rem;
+  height: 70%;
+  left: 5rem;
+  top: 8rem;
+  border-radius: 3rem;
+
+  nav {
+    > ul {
+      list-style: none;
+      margin-left: 2.5rem;
+      margin-top: 10rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+
+      > li {
+        font-size: 2rem;
+        a {
+          text-decoration: none;
+
+          color: var(--branco);
+          display: flex;
+          gap: 2rem;
+          transition: 0.3s ease;
+
+          &:hover {
+            color: var(--azul-claro);
+          }
+        }
+
+        &:nth-child(1) a {
+          color: var(--azul-claro);
+        }
+      }
+
+      details {
+        overflow: hidden;
+        transition: all 0.3s ease;
+        
+
+        summary {
+          list-style: none;
+          font-size: 1.6rem;
+          color: var(--branco);
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+          cursor: pointer;
+          transition: 0.3s ease;
+          font-size: 2rem;
+
+          &:hover {
+            color: var(--azul-claro);
+          }
+
+          &::-webkit-details-marker {
+            display: none;
+          }
+
+          i {
+            transition: transform 0.3s ease;
+          }
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          padding-top: 1rem;
+          list-style: none;
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          margin-top: 0.5rem;
+          margin-left: 2rem;
+          transition: max-height 0.4s ease, opacity 0.4s ease;
+
+          li a {
+            font-size: 1.4rem;
+            color: var(--branco);
+            transition: 0.3s ease;
+
+            &:hover {
+              color: var(--azul-claro);
+            }
+          }
+        }
+
+        &[open] {
+          ul {
+            max-height: 200px;
+            opacity: 1;
+          }
+
+          summary i {
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================= MAIN ================= */
+main {
+  width: 80%;
+  min-height: 100vh;
+  margin-left: 32rem;
+  margin-top: 10rem;
+  padding-bottom: 8rem;
+}
+
+/* ================= HERO ================= */
+#hero-destaques-section {
+  width: 106rem;
+  height: 47rem;
+  position: relative;
+
+  .hero-destaques {
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    object-fit: cover;
+  }
+
+  #destaque-texto {
+    position: absolute;
+    bottom: 6rem;
+    left: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: var(--branco);
+
+    div:nth-child(1) {
+      p {
+        backdrop-filter: blur(30px);
+        padding: 0.5rem 2rem;
+        border-radius: 1rem;
+        width: 8rem;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    h3 {
+      font-size: 2.5rem;
+    }
+
+    > p {
+      width: 40rem;
+      font-size: 1.3rem;
+    }
+
+    div:last-child {
+      display: flex;
+      gap: 1.5rem;
+
+      button {
+        border: none;
+        padding: 1rem 2rem;
+
+        &:nth-child(1) {
+          background-color: var(--branco);
+          color: var(--cinza-bem-escuro);
+          font-weight: 500;
+          font-size: 1.6rem;
+          border-radius: 3rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+        }
+
+        &:nth-child(2) {
+          background-color: var(--cinza-escuro);
+          border-radius: 2rem;
+          font-size: 1.6rem;
+          color: inherit;
+        }
+      }
+    }
+  }
+}
+
+/* ================= CARROSSEIS (Filmes + Séries) ================= */
+.carrossel-section {
+  margin-top: 4rem;
+  position: relative;
+  overflow: hidden;
+
+  .carrossel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      color: var(--branco);
+      font-size: 2.3rem;
+
+      &::first-letter {
+        color: var(--azul-claro);
+      }
+    }
+
+    .carrossel-controles {
+      display: flex;
+      gap: 0.5rem;
+      margin-right: 2rem;
+      button {
+        background-color: var(--cinza-mediano);
+        border: none;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        cursor: pointer;
+
+        i {
+          color: var(--branco);
+          font-size: 1.8rem;
+        }
+
+        &:hover {
+          background-color: var(--azul-claro);
+          i {
+            color: var(--cinza-bem-escuro);
+          }
+        }
+      }
+    }
+  }
+
+  .carrossel-container {
+    padding: 1rem 0 1rem 0.5rem;
+    display: flex;
+    gap: 2rem;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .card {
+      position: relative;
+      flex: 0 0 auto;
+      width: 22rem;
+      height: 32rem;
+      border-radius: 1.2rem;
+      overflow: hidden;
+      background-color: #111;
+      color: var(--branco);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      
+      > a {
+        z-index: 4;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+
+        .trailer-container {
+          opacity: 1;
+          pointer-events: none;
+        }
+
+        img {
+          opacity: 0;
+        }
+      }
+
+      img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1.2rem;
+        transition: opacity 0.4s ease;
+      }
+
+      .info {
+        position: relative;
+        z-index: 2;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        padding: 1.2rem;
+        border-radius: 0 0 1.2rem 1.2rem;
+
+        h4 {
+          font-size: 1.5rem;
+          font-weight: 500;
+          margin-top: 0.3rem;
+        }
+
+        div {
+          display: flex;
+          justify-content: space-between;
+          font-size: 1.3rem;
+          color: var(--branco);
+        }
+      }
+
+      .trailer-container {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+
+        iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
+          border-radius: 1.2rem;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

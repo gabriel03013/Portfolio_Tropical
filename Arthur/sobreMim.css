@@ -1,0 +1,53 @@
+.capaFilme {
+    transition: transform .4s;
+  }
+  
+.capaFilme:hover {
+    transform: scale(0.95);
+}
+
+a:hover {
+    font-size: 18px;
+}
+
+body {
+    margin: 0;
+    top: 0;
+    padding: 0;
+    background-color: rgb(56, 63, 92);
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+a {
+    color: yellow;
+}
+
+p {
+    font-size: larger;
+}
+
+th {
+    width: 500px;
+}
+
+header {
+    background-color: rgba(255, 204, 0, 1);
+    padding: 20px;
+}
+
+footer {
+    background-color: rgba(255, 204, 0, 1);
+    padding: 5px;
+    text-align: center;
+    bottom: 0;
+    font-size: 23px;
+    margin-top: auto;
+}
+
+label {
+    background-color: rgba(255, 204, 0, 1);
+    padding: 5px;
+    font-size: 25px;
+    margin: 25px;
+}

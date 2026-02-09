@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruna - tudo o que voce precisa saber</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="cabecalho">
+        <h1 > &#9790 Bruna Oliveira 1ºG &#9728</h1>
+        <h2> </h2>
+    </header>
+    <br>
+    <div id="basico">
+        <h3>15 primaveras </h3>
+        <h3> 1.65 de altura</h3>
+        <h3> 14/04/2010 </h3>
+    </div>
+
+    <div id="fotos">
+     <img src="foto3.jpeg" alt="">
+     <img src="foto4.jpeg" alt="">
+     <img src="foto2.jpeg" alt="">
+     <img src="foto5.jpeg" alt="">
+     <img src="foto1.jpeg" alt="">
+     <img src="fotinha6.jpeg" alt="">    
+    </div>
+    <br>
+    <hr>
+    <h2 id="titulo">Curiosidades</h2>
+    <div id="lista ordenada">
+    <ol>
+        <li id="a">gosto de ler livros de romance e terror</li>
+        <li id="b">sei fazer croche &#10048</li>
+        <li id="a">ouço todo tipo de musica&#9835 </li>
+        <li id="b">nunca quebrei nenhum osso</li>
+        <li id="a">tenho colesterol alto</li>
+        <li id="b">sou fanatica por quebra cabeça</li>
+        <li id="a">monto um cubo magico em 1 minuto e meio</li>
+        <li id="b">pinto as unha toda semana</li>
+        <li id="a">odeio tudo que envolva desing</li>
+        <li id="b">Gosto de jogar volley</li>
+        <li id="a">Consigo conversar com certa facilidade</li>
+        <li id="b">tenho uma cachorra carente</li>
+    </ol>
+    </div>
+    <hr>
+    <h2 id="titulo">Lugares que eu ja conheci</h2>
+        <div id="lista nao ordenada">
+    <ul>
+       <li id="b">Santa Cantarina</li>
+        <li id="a">Minas Gerais</li>
+        <li id="b">Holambra</li>
+    </ul>
+    </div>
+
+    <hr>
+    <footer>
+
+    </footer>
+
+
+
+    <h1>Resultado da Media Ponderada</h1>
+    /**codigo html*/
+    <%
+        Double media = (Double) request.getAttribute("media")
+        String status = "Aprovado"
+        if(media < 7){
+            status = "reprovado"
+        }
+        %>
+        <p>Nota 1: <%= request.getParameter("nota1")%></p>
+        <p>Nota 2: <%= request.getParameter("nota2")%></p>
+        <p>Nota 3: <%= request.getParameter("nota3")%></p>
+        <p>media: <%= media%></p>
+        <p>status: <%= status%></p>
+        
+
+
+</body>
+</html>
